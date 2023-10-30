@@ -1,0 +1,32 @@
+apiVersion: v1
+entries:
+  parent-blockfinder:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-10-30T13:15:16.266950925+05:30"
+    dependencies:
+    - name: blockfenderscharts
+      repository: https://myhelmex.s3.us-east-2.amazonaws.com/package-helm-charts/
+      version: 0.7.0
+    description: A Helm chart for parent-blockfinder demo microservice
+    digest: 4e8a39d11d1a21764f198e59055ecbd614f5d1bfc79f74270f952e196f676013
+    name: parent-blockfinder
+    type: application
+    urls:
+    - parent-blockfinder-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-10-30T13:15:16.266371956+05:30"
+    dependencies:
+    - name: blockfenderscharts
+      repository: https://myhelmex.s3.us-east-2.amazonaws.com/package-helm-charts/
+      version: 0.7.0
+    description: A Helm chart for parent-blockfinder demo microservice
+    digest: 632ca9b7d044acf62a377e13c83c49ed5afd23b58499414ec3741dd86ccca4b2
+    name: parent-blockfinder
+    type: application
+    urls:
+    - parent-blockfinder-0.6.0.tgz
+    version: 0.6.0
+generated: "2023-10-30T13:15:16.265658452+05:30"

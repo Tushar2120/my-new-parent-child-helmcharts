@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  ports:
+  #- port: 3000
+  - port: 80
+    targetPort: cratefront-port
+    nodePort: 30000
+  selector:
+    app: cratefrontend
+  type: NodePort
+  #clusterIP: 100.68.66.215
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cratefrontend
+  labels:
+    app: cratefrontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cratefrontend
+  template:
+    metadata:
+      labels:
+        app: cratefrontend
+    spec:
+      containers:
+      - name: cratefrontend
+        #image: dutta249/crate:frontend14.0
+        image: {{ .Values.duttaimage }}
+        volumeMounts:
+        - name: env-configmap
+          #mountPath: /app/.env
+          mountPath: .env
+          subPath: .env
+        ports:
+        - name: cratefront-port
+          #containerPort: 3000
+          containerPort: 80
+
+
+
+
+
+#      initContainers:
+#      - name: init-mydb
+#        image: busybox
+#        command: ['sh', '-c', 'until nslookup backend; do echo waiting for mydb; sleep 2; done;']
+      imagePullSecrets:
+      - name: my-dockerhub-creds
+      volumes:
+        - name: env-configmap
+          configMap:
+            name: env-configmap
+

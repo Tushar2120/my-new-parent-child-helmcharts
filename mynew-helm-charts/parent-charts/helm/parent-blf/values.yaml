@@ -1,0 +1,17 @@
+# Default values for blockfenderscharts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+blockfenderscharts:
+  duttaimage: httpd
+
+image:
+  #parentimage: anaisurlichs/cns-website
+  parentimage: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag2: latest
+  #tag: 0.0.6
+
+localCharts:
+  - name: blockfenderscharts
+    path: /home/tushar/kindfolder/mynew-helm-charts/child-charts/packege-helm-charts

@@ -1,0 +1,6 @@
+dependencies:
+- name: blockfenderscharts
+  repository: https://myhelmex.s3.us-east-2.amazonaws.com/package-helm-charts/
+  version: 0.7.0
+digest: sha256:20ce00e165a8aa72487f9b6e679f773655a7f9c5b6b251f9619e5e3005562c6b
+generated: "2023-10-30T13:07:40.543420654+05:30"
